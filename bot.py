@@ -1,3 +1,4 @@
+import os
 import requests
 import logging
 from aiogram import Bot, Dispatcher, types
@@ -6,8 +7,8 @@ from langdetect import detect  # Librería para detección de idioma
 from textblob import TextBlob  # Librería para análisis de sentimientos
 
 # Usar variables de entorno en producción!
-GEMINI_API_KEY = 'AIzaSyCsbujK031D2GOWOADObq0MW9FRpfxPDiU'  # ⚠️Crea una nueva key válida
-API_TOKEN = '8191447740:AAGuNa0H9VfuIGF71hDIPy2Tru99OqRmFNE'
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')  # Obtener desde las variables de entorno
+API_TOKEN = os.getenv('API_TOKEN')  # Obtener desde las variables de entorno
 
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=API_TOKEN)
